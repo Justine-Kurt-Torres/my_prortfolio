@@ -1,0 +1,89 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Orbitron", sans-serif;
+}
+
+/* Animated cyber grid background */
+.cyber-bg {
+  position: relative;
+  min-height: 100vh;
+  background: radial-gradient(circle at 50% 50%, #020d13, #000);
+  overflow: hidden;
+}
+
+.cyber-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(#00ffff15 1px, transparent 1px),
+    linear-gradient(90deg, #00ffff15 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: gridMove 6s linear infinite;
+  z-index: 0;
+}
+
+@keyframes gridMove {
+  from { background-position: 0 0, 0 0; }
+  to { background-position: 60px 60px, 60px 60px; }
+}
+
+/* Neon glow overlay */
+.cyber-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, #00ffff11, transparent 70%);
+  mix-blend-mode: screen;
+  z-index: 1;
+}
+
+/* Content */
+.cyber-container {
+  position: relative;
+  z-index: 2;
+  padding: 5rem 2rem;
+  text-align: center;
+  color: #00ffff;
+}
+
+.cyber-title {
+  font-size: 3rem;
+  text-shadow: 0 0 15px #00ffff, 0 0 30px #0099ff;
+  margin-bottom: 0.5rem;
+}
+
+.cyber-subtitle {
+  font-size: 1.2rem;
+  color: #88ffff;
+  margin-bottom: 3rem;
+  text-shadow: 0 0 5px #00ffff;
+}
+
+/* Cards */
+.cyber-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.cyber-card {
+  background: rgba(0, 10, 15, 0.8);
+  border: 1px solid #00ffff55;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  width: 280px;
+  color: #ccffff;
+  box-shadow: 0 0 10px #00ffff33;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.cyber-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px #00ffffaa, 0 0 40px #0088ffaa;
+}
+
